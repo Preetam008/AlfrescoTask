@@ -1,0 +1,17 @@
+<adf-toolbar title="completed Task" color="primary"></adf-toolbar>
+    
+
+<!-- <adf-task-attachment-list 
+    [taskId]="currentTaskid">
+  </adf-task-attachment-list>
+  
+  <adf-form [taskId]="currentTaskid"></adf-form>  -->
+
+  
+  <adf-tasklist 
+    [appId]="'5005'" 
+    [state]="'completed'" 
+    [assignment]="'assignee'"
+    (rowClick)=onClickRow($event)>
+</adf-tasklist>
+ 

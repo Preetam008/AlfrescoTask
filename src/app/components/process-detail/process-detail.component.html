@@ -1,0 +1,42 @@
+<adf-toolbar title="Process Details" color="primary">
+    
+</adf-toolbar>
+
+ 
+
+
+<h1>show process attachment</h1>
+<adf-process-attachment-list
+[processInstanceId]="prId"
+(attachmentClick)="onAttachmentClick($event)" >
+</adf-process-attachment-list> 
+<h1>Process Details</h1>
+<adf-process-instance-details 
+    [processInstanceId]="prId"
+    (taskClick)="onTaskClick($event)">
+</adf-process-instance-details>
+
+
+
+<h1>Upload Document</h1>
+<adf-create-process-attachment 
+[processInstanceId]="prId" 
+(success)="onSuccess($event)">
+</adf-create-process-attachment>
+
+<!-- <app-show-docs></app-show-docs> -->
+ 
+
+
+<div *ngIf="fileShowed">
+    <adf-viewer
+        [(showViewer)]="fileShowed"
+        [blobFile]="content"
+        [displayName]="contentName"
+        [overlayMode]="true">
+    </adf-viewer>
+</div>
+
+
+
+
